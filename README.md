@@ -12,7 +12,7 @@
 
 ## Architecture
 
-#### Dependencies
+### Dependencies
 
 _Note_: All `npm` links listed below are direct to the release version required in **City Explorer**.
 
@@ -38,9 +38,9 @@ _Note_: All `npm` links listed below are direct to the release version required 
 [GitHub](https://github.com/expressjs/cors)  
 [npm](https://www.npmjs.com/package/cors/v/2.8.5)
 
-#### APIs
+### APIs
 
-##### LocationIQ
+###### LocationIQ
 
 **Link**: [locationiq.com](https://locationiq.com/)
 
@@ -55,12 +55,24 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 #### Feature Task #2: Locations
 
-**As a user** of City Explorer, I want to enter the name of a location so that I can see data about the area of interest to me.  
+**As A User**: I want to enter the name of a location so that I can see data about the area of interest to me.  
 **Given**: That a user enters a valid location in the input;  
-**When**: The user clicks the "Explore!" button;
+**When**: The user clicks the "Explore!" button;  
 **Then**: The map will be populated with the location centered on the latitude and longitude of the search query.
 
 **Estimated Time To Completion**: Approximately 1 hour.  
 **Time Started**: 1056  
 **Time Complete**: 1137  
 **Total Time Required To Complete**: Approx 40 minutes.
+
+#### Feature Task #3: Weather
+
+**As A User**: I want to request current weather information so that I can learn more about the typical weather patterns in the location I entered.  
+**Given**: That a user enters a valid location in the input;  
+**When**: The user clicks the "Explore!" button;  
+**Then**: The weather forcast for the upcoming eight days will be displayed in the browser.
+
+**Estimated Time To Completion**: Approx 1 hour and 30 minutes.  
+**Time Started**: 1226  
+**Time Complete**:  
+**Total Time Required To Complete**:
