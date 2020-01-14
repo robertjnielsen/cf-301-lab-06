@@ -40,6 +40,8 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 ## Change Log
 
+**01/14/2020 - 1056**: Dependencies configured, inital route defined. Deployed to a Heroku dyno located at:
+
 ## Credis and Collaborations
 
 ## Assignment Timeline
