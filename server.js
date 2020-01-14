@@ -30,7 +30,7 @@ app.get('/weather', (req, res) => {
   dailyWeather.forEach(day => {
     dailyArray.push(new Weather(day));
   });
-  res.send(dailyArray);
+  res.send(console.log(dailyArray));
 });
 
 // Define functions.
@@ -41,9 +41,9 @@ function Location(city, localData) {
   this.longitude = localData.lon;
 }
 
-function Weather(localWeather) {
-  this.forecast = localWeather.summary;
-  this.time = new Date(localWeather.time).toDateString();
+function Weather(dailyForecast) {
+  this.forecast = dailyForecast.summary;
+  this.time = new Date(dailyForecast.time).toDateString();
 }
 
 // Tell our server to listen on port variable PORT.
