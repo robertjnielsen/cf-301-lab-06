@@ -22,12 +22,28 @@ app.get('/location', (req, res) => {
   res.send(location);
 });
 
+app.get('/weather', (req, res) => {
+  const weatherData = require('./data/darksky.json');
+  const dailyWeather = weatherData.daily.data;
+  let dailyArray = [];
+
+  dailyWeather.forEach(day => {
+    dailyArray.push(new Weather(day));
+  });
+  res.send(dailyArray);
+});
+
 // Define functions.
 function Location(city, localData) {
   this.search_query = city;
   this.formatted_query = localData.display_name;
   this.latitude = localData.lat;
   this.longitude = localData.lon;
+}
+
+function Weather(localWeather) {
+  this.forecast = localWeather.summary;
+  this.time = new Date(localWeather.time).toDateString();
 }
 
 // Tell our server to listen on port variable PORT.
