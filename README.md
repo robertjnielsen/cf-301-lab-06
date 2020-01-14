@@ -38,10 +38,29 @@ _Note_: All `npm` links listed below are direct to the release version required 
 [GitHub](https://github.com/expressjs/cors)  
 [npm](https://www.npmjs.com/package/cors/v/2.8.5)
 
+#### APIs
+
+##### LocationIQ
+
+**Link**: [locationiq.com](https://locationiq.com/)
+
 ## Change Log
 
-**01/14/2020 - 1056**: Dependencies configured, inital route defined. Deployed to a Heroku dyno located at: (https://rjn-city-explorer.herokuapp.com/)
+**01/14/2020 - 1056**: Dependencies configured, inital route defined. Deployed to a Heroku dyno located at: (https://rjn-city-explorer.herokuapp.com/)  
+**01/14/2020 - 1137**: Enabled users to query a location, and return a map of the location based on latitude and longitude data provided by a LocationIQ API.
 
-## Credis and Collaborations
+## Credits and Collaborations
 
-## Assignment Timeline
+## Assignment: User Stories & Timeline
+
+#### Feature Task #2: Locations
+
+**As a user** of City Explorer, I want to enter the name of a location so that I can see data about the area of interest to me.  
+**Given**: That a user enters a valid location in the input;  
+**When**: The user clicks the "Explore!" button;
+**Then**: The map will be populated with the location centered on the latitude and longitude of the search query.
+
+**Estimated Time To Completion**: Approximately 1 hour.  
+**Time Started**: 1056  
+**Time Complete**: 1137  
+**Total Time Required To Complete**: Approx 40 minutes.
