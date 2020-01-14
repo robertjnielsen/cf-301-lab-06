@@ -1,0 +1,25 @@
+{
+  "name": "city-explorer",
+  "version": "1.0.0",
+  "description": "**Version**: 1.0.0  \r **Author**: Robert James Nielsen  \r **Contact**: [robert.j.nielsen@outlook.com](mailto:robert.j.nielsen@outlook.com)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertjnielsen/cf-301-lab-06.git"
+  },
+  "author": "Robert James Nielsen",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/robertjnielsen/cf-301-lab-06/issues"
+  },
+  "homepage": "https://github.com/robertjnielsen/cf-301-lab-06#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
