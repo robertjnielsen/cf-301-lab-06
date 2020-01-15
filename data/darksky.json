@@ -1338,7 +1338,7 @@
         "apparentTemperatureMaxTime": 1540072800
       },
       {
-        "time": 1540105200,
+        "time": 1590105200,
         "summary": "Partly cloudy until afternoon.",
         "icon": "partly-cloudy-day",
         "sunriseTime": 1540132726,
@@ -1379,7 +1379,7 @@
         "apparentTemperatureMaxTime": 1540159200
       },
       {
-        "time": 1540191600,
+        "time": 1690191600,
         "summary": "Partly cloudy throughout the day.",
         "icon": "partly-cloudy-day",
         "sunriseTime": 1540219216,
@@ -1420,7 +1420,7 @@
         "apparentTemperatureMaxTime": 1540245600
       },
       {
-        "time": 1540278000,
+        "time": 1790278000,
         "summary": "Mostly cloudy throughout the day.",
         "icon": "partly-cloudy-night",
         "sunriseTime": 1540305706,
@@ -1461,7 +1461,7 @@
         "apparentTemperatureMaxTime": 1540328400
       },
       {
-        "time": 1540364400,
+        "time": 1880364400,
         "summary": "Light rain in the evening.",
         "icon": "rain",
         "sunriseTime": 1540392197,
@@ -1502,7 +1502,7 @@
         "apparentTemperatureMaxTime": 1540414800
       },
       {
-        "time": 1540450800,
+        "time": 1990450800,
         "summary": "Rain in the morning and overnight.",
         "icon": "rain",
         "sunriseTime": 1540478688,
@@ -1543,7 +1543,7 @@
         "apparentTemperatureMaxTime": 1540490400
       },
       {
-        "time": 1540537200,
+        "time": 2050537200,
         "summary": "Light rain in the morning.",
         "icon": "rain",
         "sunriseTime": 1540565179,
@@ -1584,7 +1584,7 @@
         "apparentTemperatureMaxTime": 1540587600
       },
       {
-        "time": 1540623600,
+        "time": 2180623600,
         "summary": "Mostly cloudy until evening.",
         "icon": "partly-cloudy-day",
         "sunriseTime": 1540651670,
