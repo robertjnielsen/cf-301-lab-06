@@ -2,7 +2,7 @@
 
 #### Code Fellows 301 - Labs 06, 07, 08: City Explorer Back-End
 
-**Version**: 1.1.1
+**Version**: 1.1.1  
 **Author**: Robert James Nielsen  
 **Contact**: [robert.j.nielsen@outlook.com](mailto:robert.j.nielsen@outlook.com)
 
@@ -54,7 +54,7 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 ## Change Log
 
-**01/15/2020 - 1140**: Refactored locationHandler to utizlize API queries.
+**01/15/2020 - 1140**: Refactored locationHandler to utizlize API queries.  
 **01/15/2020 - 1015**: Refactored '/weather' route to utizlize .map() functionality.  
 **01/14/2020 - 1836**: Included error handling for bad responses and poor choices per the user input.  
 **01/14/2020 - 1815**: Included data file representing API call to parse and render local weather.  

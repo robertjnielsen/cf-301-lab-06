@@ -37,14 +37,11 @@ function locationHandler(req, res) {
   if (locations[url]) {
     res.send(locations[url]);
   } else {
-    superagent
-      .get(url)
-      .then(data => {
-        let geoData = data.body[0];
-        let location = new Location(city, geoData);
-        res.status(200).send(location);
-      })
-      .catch(() => errorHandler('Something is borked, good job!', res));
+    superagent.get(url).then(data => {
+      let geoData = data.body[0];
+      let location = new Location(city, geoData);
+      res.status(200).send(location);
+    });
   }
 }
 
