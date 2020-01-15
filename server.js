@@ -37,11 +37,14 @@ function locationHandler(req, res) {
   if (locations[url]) {
     res.send(locations[url]);
   } else {
-    superagent.get(url).then(data => {
-      let geoData = data.body[0];
-      let location = new Location(city, geoData);
-      res.status(200).send(location);
-    });
+    superagent
+      .get(url)
+      .then(data => {
+        let geoData = data.body[0];
+        let location = new Location(city, geoData);
+        res.status(200).send(location);
+      })
+      .catch(() => errorHandler('You borked the interwebs! You buffoon!', res));
   }
 }
 
