@@ -30,12 +30,8 @@ app.get('/weather', (req, res) => {
   try {
     const weatherData = require('./data/darksky.json');
     const dailyWeather = weatherData.daily.data;
-    let dailyArray = [];
 
-    dailyWeather.forEach(day => {
-      dailyArray.push(new Weather(day));
-    });
-    res.status(200).send(dailyArray);
+    res.status(200).send(dailyWeather.map(day => new Weather(day)));
   } catch (error) {
     errorHandler('Something did not go as planned. Please try again.', res);
   }

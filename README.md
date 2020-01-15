@@ -1,8 +1,8 @@
 # City Explorer
 
-#### Code Fellows 301 - Lab 06: City Explorer Back-End
+#### Code Fellows 301 - Labs 06, 07, 08: City Explorer Back-End
 
-**Version**: 1.0.0  
+**Version**: 1.0.4  
 **Author**: Robert James Nielsen  
 **Contact**: [robert.j.nielsen@outlook.com](mailto:robert.j.nielsen@outlook.com)
 
@@ -49,6 +49,7 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 ## Change Log
 
+**01/15/2020 - 1015**: Refactored '/weather' route to utizlize .map() functionality.  
 **01/14/2020 - 1836**: Included error handling for bad responses and poor choices per the user input.  
 **01/14/2020 - 1815**: Included data file representing API call to parse and render local weather.  
 **01/14/2020 - 1137**: Enabled users to query a location, and return a map of the location based on latitude and longitude data provided by a LocationIQ API.  
@@ -57,6 +58,8 @@ _Note_: All `npm` links listed below are direct to the release version required 
 ## Credits and Collaborations
 
 ## Assignment: User Stories & Timeline
+
+### Lab 06
 
 #### Feature Task #1: Repository Set Up
 
@@ -100,3 +103,17 @@ _Note_: All `npm` links listed below are direct to the release version required 
 **Time Started**: 1823  
 **Time Complete**: 1836  
 **Total Time Required To Complete**: 13 minutes.
+
+### Lab 07
+
+#### Feature Task #1: Data Formatting
+
+**As A User**: I want the application to provide properly formatted data so that I can view similar data for any location that I choose.  
+**Given**: That a user enters a valid location in the input.  
+**When**: The user clicks the "Explore!" button.  
+**Then**: The data will be rendered in the same format every time.
+
+**Estimated Time To Completion**: Approx 30 minutes.  
+**Time Started**: 1000  
+**Time Complete**: 1015  
+**Total Time Required To Complete**: 15 minutes.
