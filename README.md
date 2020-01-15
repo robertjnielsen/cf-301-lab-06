@@ -8,6 +8,9 @@
 
 ## Overview
 
+City Explorer is a web app devoted to helping you discover more around the city of your choice!  
+Just enter in a city, and City Explorer will show you a detailed map, daily weather, local events and more!
+
 ## Getting Started
 
 ## Architecture
@@ -53,6 +56,13 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 ## Assignment: User Stories & Timeline
 
+#### Feature Task #1: Repository Set Up
+
+**Estimated Time To Completion**: Approx 1 hour.  
+**Time Started**: 0930  
+**Time Complete**: 1010  
+**Total Time Required To Complete**: 40 minutes.
+
 #### Feature Task #2: Locations
 
 **As A User**: I want to enter the name of a location so that I can see data about the area of interest to me.  
@@ -60,7 +70,7 @@ _Note_: All `npm` links listed below are direct to the release version required 
 **When**: The user clicks the "Explore!" button;  
 **Then**: The map will be populated with the location centered on the latitude and longitude of the search query.
 
-**Estimated Time To Completion**: Approximately 1 hour.  
+**Estimated Time To Completion**: Approx 1 hour.  
 **Time Started**: 1056  
 **Time Complete**: 1137  
 **Total Time Required To Complete**: Approx 40 minutes.
@@ -74,5 +84,17 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 **Estimated Time To Completion**: Approx 1 hour and 30 minutes.  
 **Time Started**: 1226  
-**Time Complete**:  
+**Time Complete**: 1815  
+**Total Time Required To Complete**: Almost 6 hours.
+
+#### Feature Task #4: Errors
+
+**As A User**: I want clear messages if something goes wrong so I know if I need to make any changes or try again in a different manner.  
+**Given**: That a user does not enter a valid location in the input.  
+**When**: The user clicks the "Explore!" button.  
+**Then**: The user will receive an error message on the page and the data will not be rendered properly.
+
+**Estimated Time To Completion**: Approx 30 minutes.
+**Time Started**: 1823
+**Time Complete**:
 **Total Time Required To Complete**:
