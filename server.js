@@ -30,7 +30,7 @@ app.get('/weather', (req, res) => {
   dailyWeather.forEach(day => {
     dailyArray.push(new Weather(day));
   });
-  res.send(console.log(dailyArray));
+  res.send(dailyArray);
 });
 
 // Define functions.
