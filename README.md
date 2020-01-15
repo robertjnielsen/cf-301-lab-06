@@ -49,8 +49,10 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 ## Change Log
 
-**01/14/2020 - 1056**: Dependencies configured, inital route defined. Deployed to a Heroku dyno located at: (https://rjn-city-explorer.herokuapp.com/)  
-**01/14/2020 - 1137**: Enabled users to query a location, and return a map of the location based on latitude and longitude data provided by a LocationIQ API.
+**01/14/2020 - 1836**: Included error handling for bad responses and poor choices per the user input.  
+**01/14/2020 - 1815**: Included data file representing API call to parse and render local weather.  
+**01/14/2020 - 1137**: Enabled users to query a location, and return a map of the location based on latitude and longitude data provided by a LocationIQ API.  
+**01/14/2020 - 1056**: Dependencies configured, inital route defined. Deployed to a Heroku dyno located at: (https://rjn-city-explorer.herokuapp.com/)
 
 ## Credits and Collaborations
 
@@ -95,6 +97,6 @@ _Note_: All `npm` links listed below are direct to the release version required 
 **Then**: The user will receive an error message on the page and the data will not be rendered properly.
 
 **Estimated Time To Completion**: Approx 30 minutes.
-**Time Started**: 1823
-**Time Complete**:
-**Total Time Required To Complete**:
+**Time Started**: 1823  
+**Time Complete**: 1836  
+**Total Time Required To Complete**: 13 minutes.
