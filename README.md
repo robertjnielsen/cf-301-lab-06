@@ -2,7 +2,7 @@
 
 #### Code Fellows 301 - Labs 06, 07, 08: City Explorer Back-End
 
-**Version**: 1.0.4  
+**Version**: 1.1.1
 **Author**: Robert James Nielsen  
 **Contact**: [robert.j.nielsen@outlook.com](mailto:robert.j.nielsen@outlook.com)
 
@@ -41,6 +41,11 @@ _Note_: All `npm` links listed below are direct to the release version required 
 [GitHub](https://github.com/expressjs/cors)  
 [npm](https://www.npmjs.com/package/cors/v/2.8.5)
 
+###### superagent
+
+**Version**: 5.2.1  
+**Links**: [npm](https://www.npmjs.com/package/superagent/v/5.2.1)
+
 ### APIs
 
 ###### LocationIQ
@@ -49,6 +54,7 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 ## Change Log
 
+**01/15/2020 - 1140**: Refactored locationHandler to utizlize API queries.
 **01/15/2020 - 1015**: Refactored '/weather' route to utizlize .map() functionality.  
 **01/14/2020 - 1836**: Included error handling for bad responses and poor choices per the user input.  
 **01/14/2020 - 1815**: Included data file representing API call to parse and render local weather.  
@@ -117,3 +123,15 @@ _Note_: All `npm` links listed below are direct to the release version required 
 **Time Started**: 1000  
 **Time Complete**: 1015  
 **Total Time Required To Complete**: 15 minutes.
+
+#### Feature Task #2: Locations
+
+**As A User**: I want to enter the name of a location so that I do not need to look up the latitute and longitude every time I learn about a new location.  
+**Given**: That a user enteres a valid location input.  
+**When**: The user clicks the "Explore!" button.  
+**Then**: The map will be populated with the location centered on the latitude and longitude of the search query.
+
+**Estimated Time To Completion**: Approx 2 hours.  
+**Time Started**: 1048  
+**Time Complete**: 1140  
+**Total Time Required To Complete**: Less than 1 hour.
