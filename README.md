@@ -63,6 +63,8 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 ## Credits and Collaborations
 
+[Andrew Kyllo](https://github.com/kyllo34)
+
 ## Assignment: User Stories & Timeline
 
 ### Lab 06
@@ -135,3 +137,15 @@ _Note_: All `npm` links listed below are direct to the release version required 
 **Time Started**: 1048  
 **Time Complete**: 1140  
 **Total Time Required To Complete**: Less than 1 hour.
+
+#### Feature Task #3: Weather
+
+**As A User**: I want to request current weather information at any location, so that I can learn more about the typical weather patterns in the area of interest.  
+**Given**: That a user enteres a valid location input.  
+**When**: The user clicks the "Explore!" button.  
+**Then**: The weather forecast for the upcoming eight days will be displayed in the browser.
+
+**Estimated Time To Completion**:  
+**Time Started**:  
+**Time Complete**:  
+**Total Time Required To Complete**:
