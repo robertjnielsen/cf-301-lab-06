@@ -2,7 +2,7 @@
 
 #### Code Fellows 301 - Labs 06, 07, 08: City Explorer Back-End
 
-**Version**: 1.1.1  
+**Version**: 1.2.1  
 **Author**: Robert James Nielsen  
 **Contact**: [robert.j.nielsen@outlook.com](mailto:robert.j.nielsen@outlook.com)
 
@@ -48,6 +48,14 @@ _Note_: All `npm` links listed below are direct to the release version required 
 [GitHub](https://github.com/visionmedia/superagent)  
 [npm](https://www.npmjs.com/package/superagent/v/5.2.1)
 
+###### pg
+
+**Version**: 7.17.1
+**Links**:
+[node-postgres](https://node-postgres.com/)  
+[GitHub](https://github.com/brianc/node-postgres/tree/master/packages/pg)  
+[npm](https://www.npmjs.com/package/pg/v/7.17.1)
+
 ### APIs
 
 ###### LocationIQ
@@ -60,7 +68,8 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 ## Change Log
 
-**01/15/2020 - 2104**: Updated with DarkSky API to handle location weather data.
+**01/16/2020 - 1050**: Created database shchema, and connected server to database.  
+**01/15/2020 - 2104**: Updated with DarkSky API to handle location weather data.  
 **01/15/2020 - 1140**: Refactored locationHandler to utizlize API queries.  
 **01/15/2020 - 1015**: Refactored '/weather' route to utizlize .map() functionality.  
 **01/14/2020 - 1836**: Included error handling for bad responses and poor choices per the user input.  
@@ -71,6 +80,7 @@ _Note_: All `npm` links listed below are direct to the release version required 
 ## Credits and Collaborations
 
 [Andrew Kyllo](https://github.com/kyllo34)
+[Blandine Dasilveira](https://github.com/blandine12)
 
 ## Assignment: User Stories & Timeline
 
@@ -156,3 +166,38 @@ _Note_: All `npm` links listed below are direct to the release version required 
 **Time Started**: 1140  
 **Time Complete**: 2104  
 **Total Time Required To Complete**: Approx 9 hours and 20 minutes.
+
+#### Feature Task #4: Events
+
+**As A User**: I want to request information about events in the area, so that I can learn about what is taking place there.  
+**Given**: That a user enteres a valid location input.  
+**When**: The user clicks the "Explore!" button.  
+**Then**: The first twenty events hosted in the area will be displayed in the browser.
+
+**Estimated Time To Completion**:  
+**Time Started**:  
+**Time Complete**:  
+**Total Time Required To Complete**:
+
+### Lab 08
+
+#### Feature Task #1: Database
+
+**As A User**: I want the application to perform quickly, so that I can search for locations frequently and reliably.  
+**Given**:Tthat a user enters a **new** valid location in the input.  
+**When**: The user clicks the "Explore!" button.  
+**Then**: The results will be requested from each individual API, if not previously cached.  
+**Then**: The results will be cached in a SQL database for future retrieval.
+
+**Given**: That a user enters a **previously-used** valid location in the input.  
+**When**: The user clicks the "Explore!" button.  
+**Then**: The location results will be loaded from a SQL database.
+
+**Given**: That a user does enters an **invalid** location in the input.  
+**When**: The user clicks the "Explore!" button.  
+**Then**: The location information will not be displayed.
+
+**Estimated Time To Completion**: Approx 1 hour.  
+**Time Started**: 0930  
+**Time Complete**: 1050  
+**Total Time Required To Complete**: 1 hour and 20 minutes.
