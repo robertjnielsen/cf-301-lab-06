@@ -9,7 +9,8 @@ require('dotenv').config();
 // Declare common variables.
 const app = express();
 const PORT = process.env.PORT || 3001;
-let locations = {};
+const locations = {};
+const forecasts = {};
 
 // Use CORS to allow our server to pass data to the front-end.
 app.use(cors());
@@ -17,16 +18,7 @@ app.use(cors());
 // Define routes.
 app.get('/location', locationHandler);
 
-app.get('/weather', (req, res) => {
-  try {
-    const weatherData = require('./data/darksky.json');
-    const dailyWeather = weatherData.daily.data;
-
-    res.status(200).send(dailyWeather.map(day => new Weather(day)));
-  } catch (error) {
-    errorHandler('Something did not go as planned. Please try again.', res);
-  }
-});
+app.get('/weather', weatherHandler);
 
 // Define functions.
 function locationHandler(req, res) {
@@ -42,7 +34,29 @@ function locationHandler(req, res) {
       .then(data => {
         let geoData = data.body[0];
         let location = new Location(city, geoData);
+        locations[url] = location;
         res.status(200).send(location);
+      })
+      .catch(() => errorHandler('You borked the interwebs! You buffoon!', res));
+  }
+}
+
+function weatherHandler(req, res) {
+  const key = process.env.DARKSKY_API_KEY;
+  const lat = req.query.latitude;
+  const lon = req.query.longitude;
+  const url = `https://api.darksky.net/forecast/${key}/${lat},${lon}`;
+
+  if (forecasts[url]) {
+    res.send(forecasts[url]);
+  } else {
+    superagent
+      .get(url)
+      .then(data => {
+        const weatherData = data.body.daily.data;
+        const dailyWeather = weatherData.map(day => new Weather(day));
+        forecasts[url] = dailyWeather;
+        res.status(200).send(dailyWeather);
       })
       .catch(() => errorHandler('You borked the interwebs! You buffoon!', res));
   }
