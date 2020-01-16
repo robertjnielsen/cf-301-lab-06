@@ -1,24 +1,33 @@
 'use strict';
 
-// Declare requirements.
+// Load environment variables from configuration.
+require('dotenv').config();
+
+// Declare application dependencies.
 const express = require('express');
 const cors = require('cors');
 const superagent = require('superagent');
-require('dotenv').config();
+const pg = require('pg');
 
-// Declare common variables.
+// Application setup.
 const app = express();
 const PORT = process.env.PORT || 3001;
+app.use(cors());
+
+// Database connection config.
+const client = new pg.Client(process.env.DATABASE_URL);
+client.on('error', err => {
+  throw err;
+});
+
+// Declare common variables.
 const locations = {};
 const forecasts = {};
 
-// Use CORS to allow our server to pass data to the front-end.
-app.use(cors());
-
 // Define routes.
 app.get('/location', locationHandler);
-
 app.get('/weather', weatherHandler);
+app.get('/events', eventsHandler);
 
 // Define functions.
 function locationHandler(req, res) {
@@ -62,6 +71,11 @@ function weatherHandler(req, res) {
   }
 }
 
+function eventsHandler(req, res) {
+  let key = process.env.EVENTFUL_API_KEY;
+  let url = `http://api.eventful.com/json/events/search?keywords=music&location=${search_query}&app_key=${key}`;
+}
+
 function Location(city, localData) {
   this.search_query = city;
   this.formatted_query = localData.display_name;
@@ -78,7 +92,14 @@ function errorHandler(str, res) {
   res.status(500).send(str);
 }
 
-// Tell our server to listen on port variable PORT.
-app.listen(PORT, () => {
-  console.log(`Listening on port: ${PORT}`);
-});
+// Connect to database, and listen on PORT if successful.
+client
+  .connect()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Listening on port: ${PORT}`);
+    });
+  })
+  .catch(err => {
+    throw `PG Startup Error: ${err.message}`;
+  });
