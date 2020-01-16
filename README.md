@@ -44,16 +44,23 @@ _Note_: All `npm` links listed below are direct to the release version required 
 ###### superagent
 
 **Version**: 5.2.1  
-**Links**: [npm](https://www.npmjs.com/package/superagent/v/5.2.1)
+**Links**:  
+[GitHub](https://github.com/visionmedia/superagent)  
+[npm](https://www.npmjs.com/package/superagent/v/5.2.1)
 
 ### APIs
 
 ###### LocationIQ
 
-**Link**: [locationiq.com](https://locationiq.com/)
+**Link**: [LocationIQ](https://locationiq.com/)
+
+###### DarkSky
+
+**Link**: [DarkSky API](https://darksky.net/dev)
 
 ## Change Log
 
+**01/15/2020 - 2104**: Updated with DarkSky API to handle location weather data.
 **01/15/2020 - 1140**: Refactored locationHandler to utizlize API queries.  
 **01/15/2020 - 1015**: Refactored '/weather' route to utizlize .map() functionality.  
 **01/14/2020 - 1836**: Included error handling for bad responses and poor choices per the user input.  
@@ -145,7 +152,7 @@ _Note_: All `npm` links listed below are direct to the release version required 
 **When**: The user clicks the "Explore!" button.  
 **Then**: The weather forecast for the upcoming eight days will be displayed in the browser.
 
-**Estimated Time To Completion**:  
-**Time Started**:  
-**Time Complete**:  
-**Total Time Required To Complete**:
+**Estimated Time To Completion**: Approx 2 hours.  
+**Time Started**: 1140  
+**Time Complete**: 2104  
+**Total Time Required To Complete**: Approx 9 hours and 20 minutes.
