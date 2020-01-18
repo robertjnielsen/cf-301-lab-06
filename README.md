@@ -84,7 +84,7 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 ## Credits and Collaborations
 
-[Andrew Kyllo](https://github.com/kyllo34)
+[Andrew Kyllo](https://github.com/kyllo34)  
 [Blandine Dasilveira](https://github.com/blandine12)
 
 ## Assignment: User Stories & Timeline
