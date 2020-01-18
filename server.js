@@ -56,24 +56,21 @@ function weatherHandler(req, res) {
   const lon = req.query.longitude;
   const url = `https://api.darksky.net/forecast/${key}/${lat},${lon}`;
 
-  if (forecasts[url]) {
-    res.send(forecasts[url]);
-  } else {
-    superagent
-      .get(url)
-      .then(data => {
-        const weatherData = data.body.daily.data;
-        const dailyWeather = weatherData.map(day => new Weather(day));
-        forecasts[url] = dailyWeather;
-        res.status(200).send(dailyWeather);
-      })
-      .catch(() => errorHandler('You borked the interwebs! You buffoon!', res));
-  }
+  superagent
+    .get(url)
+    .then(data => {
+      const weatherData = data.body.daily.data;
+      const dailyWeather = weatherData.map(day => new Weather(day));
+      forecasts[url] = dailyWeather;
+      res.status(200).send(dailyWeather);
+    })
+    .catch(() => errorHandler('You borked the interwebs! You buffoon!', res));
 }
 
 function eventsHandler(req, res) {
+  let {search_query} = req.query;
   let key = process.env.EVENTFUL_API_KEY;
-  let url = `http://api.eventful.com/json/events/search?keywords=music&location=${location.search_query}&app_key=${key}`;
+  let url = `http://api.eventful.com/json/events/search?keywords=music&location=${search_query}&app_key=${key}`;
 
   superagent
     .get(url)
