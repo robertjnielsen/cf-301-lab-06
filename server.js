@@ -96,8 +96,8 @@ function Weather(dailyForecast) {
 
 function Event(eventData) {
   this.name = eventData.title;
-  this.date = eventData.start_time.slice(0, 10);
-  this.url = eventData.url;
+  this.event_date = eventData.start_time.slice(0, 10);
+  this.link = eventData.url;
   this.summary = eventData.description;
 }
 
