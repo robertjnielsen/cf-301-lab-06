@@ -76,10 +76,10 @@ function eventsHandler(req, res) {
     .get(url)
     .then(data => {
       let bigData = JSON.parse(data.text);
-      let events = bigData.events.event.map(thisEvent => new Event(thisEvent));
-      res.status(200).send(events);
+      let eventData = bigData.events.event.map(thisEvent => new Event(thisEvent));
+      res.status(200).send(eventData);
     })
-    .catch((err) => errorHandler(err, res));
+    .catch(err => console.error(err));
 }
 
 function Location(city, localData) {
