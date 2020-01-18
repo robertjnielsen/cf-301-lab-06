@@ -73,7 +73,16 @@ function weatherHandler(req, res) {
 
 function eventsHandler(req, res) {
   let key = process.env.EVENTFUL_API_KEY;
-  let url = `http://api.eventful.com/json/events/search?keywords=music&location=${search_query}&app_key=${key}`;
+  let url = `http://api.eventful.com/json/events/search?keywords=music&location=${location.search_query}&app_key=${key}`;
+
+  superagent
+    .get(url)
+    .then(data => {
+      let bigData = JSON.parse(data.text);
+      let events = bigData.events.event.map(thisEvent => new Event(thisEvent));
+      res.status(200).send(events);
+    })
+    .catch(() => errorHandler('You borked the interwebs! You buffoon!', res));
 }
 
 function Location(city, localData) {
@@ -86,6 +95,13 @@ function Location(city, localData) {
 function Weather(dailyForecast) {
   this.forecast = dailyForecast.summary;
   this.time = new Date(dailyForecast.time * 1000).toString().slice(0, 15);
+}
+
+function Event(eventData) {
+  this.name = eventData.title;
+  this.date = eventData.start_time.slice(0, 10);
+  this.url = eventData.url;
+  this.summary = eventData.description;
 }
 
 function errorHandler(str, res) {
