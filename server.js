@@ -79,7 +79,7 @@ function eventsHandler(req, res) {
       let events = bigData.events.event.map(thisEvent => new Event(thisEvent));
       res.status(200).send(events);
     })
-    .catch(() => errorHandler('You borked the interwebs! You buffoon!', res));
+    .catch((err) => errorHandler(err, res));
 }
 
 function Location(city, localData) {
@@ -101,8 +101,8 @@ function Event(eventData) {
   this.summary = eventData.description;
 }
 
-function errorHandler(str, res) {
-  res.status(500).send(str);
+function errorHandler(err, res) {
+  res.status(500).send(err);
 }
 
 // Connect to database, and listen on PORT if successful.
