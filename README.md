@@ -2,7 +2,7 @@
 
 #### Code Fellows 301 - Labs 06, 07, 08: City Explorer Back-End
 
-**Version**: 1.2.1  
+**Version**: 1.2.2  
 **Author**: Robert James Nielsen  
 **Contact**: [robert.j.nielsen@outlook.com](mailto:robert.j.nielsen@outlook.com)
 
@@ -66,8 +66,13 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 **Link**: [DarkSky API](https://darksky.net/dev)
 
+###### Eventful
+
+**Link**: [Eventful API](http://api.eventful.com/)
+
 ## Change Log
 
+**01/18/2020 - 1440**: Updated with Eventful API to handle location event queries.  
 **01/16/2020 - 1050**: Created database shchema, and connected server to database.  
 **01/15/2020 - 2104**: Updated with DarkSky API to handle location weather data.  
 **01/15/2020 - 1140**: Refactored locationHandler to utizlize API queries.  
@@ -174,10 +179,10 @@ _Note_: All `npm` links listed below are direct to the release version required 
 **When**: The user clicks the "Explore!" button.  
 **Then**: The first twenty events hosted in the area will be displayed in the browser.
 
-**Estimated Time To Completion**:  
-**Time Started**:  
-**Time Complete**:  
-**Total Time Required To Complete**:
+**Estimated Time To Completion**: Approx 1 hour.  
+**Time Started**: 1310  
+**Time Complete**: 1440  
+**Total Time Required To Complete**: 1 hour and 30 minutes.  
 
 ### Lab 08
 
