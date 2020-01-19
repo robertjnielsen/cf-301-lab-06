@@ -2,7 +2,7 @@
 
 #### Code Fellows 301 - Labs 06, 07, 08, 09: City Explorer Back-End
 
-**Version**: 1.3.5  
+**Version**: 1.4.0  
 **Author**: Robert James Nielsen  
 **Contact**: [robert.j.nielsen@outlook.com](mailto:robert.j.nielsen@outlook.com)
 
@@ -80,6 +80,7 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 ## Change Log
 
+**01/18/2020 - 2027**: Refactored code into lib modules.  
 **01/18/2020 - 1957**: Updated with Yelp API to handle location business queries.  
 **01/18/2020 - 1856**: Updated with TheMovieDB API to handle location movie queries.  
 **01/18/2020 - 1755**: App re-deployed to Heroku to include Heroku PostgreSQL database.  
@@ -258,3 +259,10 @@ _Note_: All `npm` links listed below are direct to the release version required 
 **Time Started**: 1915  
 **Time Complete**: 1957  
 **Total Time Required To Complete**: 42 minutes.
+
+#### Feature Task #3: Modularize
+
+**Estimated Time To Completion**: 1 hour.  
+**Time Started**: 2015  
+**Time Complete**: 2227  
+**Total Time Required To Complete**: 2 hours and 12 minutes.
