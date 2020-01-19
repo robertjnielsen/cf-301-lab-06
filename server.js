@@ -25,6 +25,7 @@ app.get('/location', locationHandler);
 app.get('/weather', weatherHandler);
 app.get('/events', eventsHandler);
 app.get('/movies', moviesHandler);
+app.get('/yelp', yelpHandler);
 app.use('*', (req, res) => res.status(404).send('Page not found!'));
 
 // Define functions.
@@ -98,6 +99,20 @@ function moviesHandler(req, res) {
     .catch(() => errorHandler('You borked the MovieDB! You buffoon!', res));
 }
 
+function yelpHandler(req, res) {
+  let key = process.env.YELP_API_KEY;
+  let {latitude, longitude} = req.query;
+  let url = `https://api.yelp.com/v3/businesses/search?term=delis&latitude=${latitude}&longitude=${longitude}`;
+  superagent.get(url)
+    .set('Authorization', `Bearer ${key}`)
+    .then(data => {
+      let businesses = JSON.parse(data.text).businesses;
+      let business = businesses.map(thisBusiness => new Business(thisBusiness));
+      res.status(200).send(business);
+    })
+    .catch(() => errorHandler('You borked Yelp! You buffoon!', res));
+}
+
 function Location(city, localData) {
   this.search_query = city;
   this.formatted_query = localData.display_name;
@@ -125,6 +140,13 @@ function Movie(movieData) {
   this.image_url = `https://image.tmdb.org/t/p/w500${movieData.backdrop_path}`;
   this.popularity = movieData.popularity;
   this.released_on = movieData.release_date;
+}
+
+function Business(businessData) {
+  this.name = businessData.name;
+  this.image_url = businessData.image_url;
+  this.price = businessData.price;
+  this.url = businessData.url;
 }
 
 function errorHandler(err, res) {
