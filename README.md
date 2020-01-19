@@ -1,8 +1,8 @@
 # City Explorer
 
-#### Code Fellows 301 - Labs 06, 07, 08: City Explorer Back-End
+#### Code Fellows 301 - Labs 06, 07, 08, 09: City Explorer Back-End
 
-**Version**: 1.2.7  
+**Version**: 1.3.5  
 **Author**: Robert James Nielsen  
 **Contact**: [robert.j.nielsen@outlook.com](mailto:robert.j.nielsen@outlook.com)
 
@@ -68,10 +68,20 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 ###### Eventful
 
-**Link**: [Eventful API](http://api.eventful.com/)
+**Link**: [Eventful API](http://api.eventful.com/)  
+
+###### The Movie Database
+
+**Link**: [The MovieDB](https://developers.themoviedb.org/3/getting-started/introduction)  
+
+###### Yelp
+
+**Link**: [Yelp API](https://www.yelp.com/developers/documentation/v3/business)
 
 ## Change Log
 
+**01/18/2020 - 1957**: Updated with Yelp API to handle location business queries.  
+**01/18/2020 - 1856**: Updated with TheMovieDB API to handle location movie queries.  
 **01/18/2020 - 1755**: App re-deployed to Heroku to include Heroku PostgreSQL database.  
 **01/18/2020 - 1744**: Location data now stores in PostgreSQL database for quick reference.  
 **01/18/2020 - 1440**: Updated with Eventful API to handle location event queries.  
@@ -228,8 +238,23 @@ _Note_: All `npm` links listed below are direct to the release version required 
 #### Feature Task #1: Movies
 
 **As A User**: I want to request information about movies that are connected to the area, so that users can learn more about the location.  
+**Given**: That a user enters a valid location in the input.  
+**When**: The user clicks the "Explore!" button.  
+**Then**: The top twenty movies set in the area will be displayed in the browser.  
 
 **Estimated Time To Completion**: 30 minutes.  
 **Time Started**: 1830  
-**Time Complete**:  
-**Total Time Required To Complete**:  
+**Time Complete**: 1856  
+**Total Time Required To Complete**: 26 minutes.  
+
+#### Feature Task #2: Yelp
+
+**As A User**: I want to request information about restaurants in the area so that users can view recommendations based on the search query.  
+**Given**: That a user enters a valid location in the input.  
+**When**: The user clicks the "Explore!" button.  
+**Then**: The first twenty restaurants in the area will be displayed in the browser.  
+
+**Estimated Time To Completion**: 45 minutes.  
+**Time Started**: 1915  
+**Time Complete**: 1957  
+**Total Time Required To Complete**: 42 minutes.
