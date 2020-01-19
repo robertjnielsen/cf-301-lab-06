@@ -79,7 +79,7 @@ function eventsHandler(req, res) {
       let eventData = bigData.events.event.map(thisEvent => new Event(thisEvent));
       res.status(200).send(eventData);
     })
-    .catch(err => console.error(err));
+    .catch(err => errorHandler(err, res));
 }
 
 function Location(city, localData) {
