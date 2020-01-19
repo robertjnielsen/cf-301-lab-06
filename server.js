@@ -29,18 +29,30 @@ app.use('*', (req, res) => res.status(404).send('Page not found!'));
 // Define functions.
 function locationHandler(req, res) {
   let city = req.query.city;
-  let key = process.env.GEOCODE_API_KEY;
-  let url = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${city}&format=json`;
+  let sql = 'SELECT * FROM cities WHERE search_query = $1;';
+  let values = [city];
 
-  superagent
-    .get(url)
+  client.query(sql, values)
     .then(data => {
-      let geoData = data.body[0];
-      let location = new Location(city, geoData);
-      res.status(200).send(location);
+      if (data.rowCount) {
+        res.status(200).send(data.rows[0]);
+        console.log(data.rows[0]);
+      } else {
+        let key = process.env.GEOCODE_API_KEY;
+        let url = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${city}&format=json`;
+        superagent.get(url)
+          .then(data => {
+            let geoData = data.body[0];
+            let location = new Location(city, geoData);
+            let newSQL = 'INSERT INTO cities (search_query, formatted_query, latitude, longitude) VALUES ($1, $2, $3, $4);';
+            let safeValues = [city, location.formatted_query, location.latitude, location.longitude];
+            client.query(newSQL, safeValues);
+            console.log('sent data to cities');
+            res.status(200).send(location);
+          })
+          .catch(() => errorHandler('LocationIQ API Error!', res));
+      }
     })
-    .catch(() => errorHandler('You borked LocationIQ! You buffoon!', res));
-  }
 }
 
 function weatherHandler(req, res) {

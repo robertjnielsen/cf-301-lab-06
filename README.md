@@ -2,7 +2,7 @@
 
 #### Code Fellows 301 - Labs 06, 07, 08: City Explorer Back-End
 
-**Version**: 1.2.2  
+**Version**: 1.2.5  
 **Author**: Robert James Nielsen  
 **Contact**: [robert.j.nielsen@outlook.com](mailto:robert.j.nielsen@outlook.com)
 
@@ -72,6 +72,7 @@ _Note_: All `npm` links listed below are direct to the release version required 
 
 ## Change Log
 
+**01.18/2020 - 1744**: Location data now stores in PostgreSQL database for quick reference.  
 **01/18/2020 - 1440**: Updated with Eventful API to handle location event queries.  
 **01/16/2020 - 1050**: Created database shchema, and connected server to database.  
 **01/15/2020 - 2104**: Updated with DarkSky API to handle location weather data.  
@@ -206,3 +207,10 @@ _Note_: All `npm` links listed below are direct to the release version required 
 **Time Started**: 0930  
 **Time Complete**: 1050  
 **Total Time Required To Complete**: 1 hour and 20 minutes.
+
+#### Feature Task #2: Server
+
+**Estimated Time To Completion**: Approx 30 minutes.  
+**Time Started**: 1710  
+**Time Complete**: 1744  
+**Total Time Required To Complete**: 34 minutes.
