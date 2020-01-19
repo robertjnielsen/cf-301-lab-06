@@ -222,3 +222,14 @@ _Note_: All `npm` links listed below are direct to the release version required 
 **Time Started**: 1750  
 **Time Complete**: 1755  
 **Total Time Required To Complete**: 5 minutes.  
+
+### Lab 09
+
+#### Feature Task #1: Movies
+
+**As A User**: I want to request information about movies that are connected to the area, so that users can learn more about the location.  
+
+**Estimated Time To Completion**: 30 minutes.  
+**Time Started**: 1830  
+**Time Complete**:  
+**Total Time Required To Complete**:  
