@@ -20,14 +20,11 @@ client.on('error', err => {
   throw err;
 });
 
-// Declare common variables.
-const locations = {};
-const forecasts = {};
-
 // Define routes.
 app.get('/location', locationHandler);
 app.get('/weather', weatherHandler);
 app.get('/events', eventsHandler);
+app.use('*', (req, res) => res.status(404).send('Page not found!'));
 
 // Define functions.
 function locationHandler(req, res) {
@@ -35,18 +32,14 @@ function locationHandler(req, res) {
   let key = process.env.GEOCODE_API_KEY;
   let url = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${city}&format=json`;
 
-  if (locations[url]) {
-    res.send(locations[url]);
-  } else {
-    superagent
-      .get(url)
-      .then(data => {
-        let geoData = data.body[0];
-        let location = new Location(city, geoData);
-        locations[url] = location;
-        res.status(200).send(location);
-      })
-      .catch(() => errorHandler('You borked the interwebs! You buffoon!', res));
+  superagent
+    .get(url)
+    .then(data => {
+      let geoData = data.body[0];
+      let location = new Location(city, geoData);
+      res.status(200).send(location);
+    })
+    .catch(() => errorHandler('You borked LocationIQ! You buffoon!', res));
   }
 }
 
@@ -61,10 +54,9 @@ function weatherHandler(req, res) {
     .then(data => {
       const weatherData = data.body.daily.data;
       const dailyWeather = weatherData.map(day => new Weather(day));
-      forecasts[url] = dailyWeather;
       res.status(200).send(dailyWeather);
     })
-    .catch(() => errorHandler('You borked the interwebs! You buffoon!', res));
+    .catch(() => errorHandler('You borked DarkSky! You buffoon!', res));
 }
 
 function eventsHandler(req, res) {
@@ -79,7 +71,7 @@ function eventsHandler(req, res) {
       let eventData = bigData.events.event.map(thisEvent => new Event(thisEvent));
       res.status(200).send(eventData);
     })
-    .catch(err => errorHandler(err, res));
+    .catch(() => errorHandler('You borked Eventful! You buffoon!', res));
 }
 
 function Location(city, localData) {
